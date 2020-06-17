@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from "prop-types"
 //themeproviders
 import { ThemeProvider } from 'styled-components'
@@ -8,14 +8,17 @@ import { GlobalStyles } from '../ThemeProvider/global'
 import { useDarkMode } from '../ThemeProvider/useDarkMode'
 //components
 import Toggle from './Toggle'
-
+import Navigation from './Navigation'
+import MenuTab from './MenuTab'
 
 const Layout = ({ children }) => {
   
   //toggle theme
   const [ theme, toggleTheme, componentMounted ] = useDarkMode();
   const themeMode = theme === "light" ? lightTheme : darkTheme;
-  
+  //toggle Menu
+  const [toggleMenu, setToggleMenu] = useState(false) 
+
   if(!componentMounted) {
     return <div />
   }
@@ -24,6 +27,8 @@ const Layout = ({ children }) => {
       <>
         <GlobalStyles />
         <Toggle theme={theme} toggleTheme={toggleTheme} />
+        <MenuTab toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
+        <Navigation toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
         <main>{children}</main>
       </>
     </ThemeProvider>
