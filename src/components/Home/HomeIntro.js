@@ -1,44 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { LandingIntroWrapper, LandingIntroContent, LandingIntroBox, LandingIntroBg, LandingIntroDate, LandingIntroSocial } from '../../styles/homeIntroStyles'
-//scroll behaviour
-import { useInView } from 'react-intersection-observer'
-import { useAnimation } from 'framer-motion'
 
-const introVariants = {
-    hidden: { 
-        opacity: 0,
-        x: 500
-    },
-    visible: {
-        opacity: 1,
-        x: 0, 
-        transition: {
-            delay: 1,
-            duration: 0.8, 
-            ease: [0.1,0.6,0.05,0.91]
-        }
-    }
-}
 
 const HomeIntro = () => {
-    const animation = useAnimation()
-    const [contentRef, inView] = useInView({
-        triggerOnce: true,
-    })
-    
-    useEffect(() => {
-        if(inView) {
-            animation.start("visible")
-        }
-    })
 
     return (
-        <LandingIntroWrapper
-                ref={contentRef}
-                animate={animation}
-                initial="hidden"
-                variants={introVariants}
-        >
+        <LandingIntroWrapper>
             <LandingIntroContent>
                     <span className="intros_a">YOUTUBE Blogger /</span>
                     <span className="intros_b">Tv presenter/dj</span>
