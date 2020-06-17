@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `A Soothing yet powerful designed website`,
+    description: `A Soothing yet powerful designed website || blogger-portfolio`,
+    author: `@firedev`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -13,6 +13,39 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Advent Pro`,
+            subsets: [`latin`],
+            variants: [`400, 600, 700`]
+          },
+          {
+            family: `Orbitron`,
+            subset: [`latin`],
+            variants: [`400, 600, 700`]
+          },
+          {
+            family: `Bebas Neue`,
+            subset: [`latin`],
+            variants: [`400, 600, 700`]
+          },
+          {
+            family: `Fredericka the Great`,
+            subset: [`latin`],
+            variants: [`400, 600, 700`]
+          },
+          {
+            family: `Odibee Sans`,
+            subset: [`latin`],
+            variants: [`400, 600, 700`]
+          },
+        ],
+      },
+    },
+    `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

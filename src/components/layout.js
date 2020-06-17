@@ -1,46 +1,32 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-import React from "react"
+import React from 'react'
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+//themeproviders
+import { ThemeProvider } from 'styled-components'
+import { lightTheme, darkTheme } from '../ThemeProvider/theme'
+import { GlobalStyles } from '../ThemeProvider/global'
+//custom hook for themeprovider
+import { useDarkMode } from '../ThemeProvider/useDarkMode'
+//components
+import Toggle from './Toggle'
 
-import Header from "./header"
-import "./layout.css"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
+  
+  //toggle theme
+  const [ theme, toggleTheme, componentMounted ] = useDarkMode();
+  const themeMode = theme === "light" ? lightTheme : darkTheme;
+  
+  if(!componentMounted) {
+    return <div />
+  }
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+    <ThemeProvider theme={themeMode}>
+      <>
+        <GlobalStyles />
+        <Toggle theme={theme} toggleTheme={toggleTheme} />
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
+      </>
+    </ThemeProvider>
   )
 }
 
