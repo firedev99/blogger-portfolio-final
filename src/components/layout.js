@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
         <Toggle theme={theme} toggleTheme={toggleTheme} />
         <MenuTab toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
         <Navigation toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
-        <main>{children}</main>
+          <main>{children}</main>
       </>
     </ThemeProvider>
   )

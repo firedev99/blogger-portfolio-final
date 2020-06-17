@@ -1,5 +1,7 @@
 import styled from 'styled-components'
-export const HomeContactWrapper = styled.div`
+import { motion } from 'framer-motion'
+
+export const HomeContactWrapper = styled(motion.div)`
     height: 100vh;
     position: relative;
     top: 15rem;

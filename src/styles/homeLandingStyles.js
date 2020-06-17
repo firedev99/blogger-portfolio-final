@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
-export const LandingWrapper = styled.div`
+export const LandingWrapper = styled(motion.div)`
     height: 100%;
     width: 100%;
     .texture {
@@ -17,7 +18,7 @@ export const LandingWrapper = styled.div`
         display: ${({theme}) => theme.theme === "darkTheme" ? "none" : "block"};
     }
 `
-export const LandingTitle = styled.h1`
+export const LandingTitle = styled(motion.h1)`
     font-size: 6rem;
     letter-spacing: 17px;
     text-transform: uppercase;
@@ -60,7 +61,7 @@ export const LandingTitle = styled.h1`
         letter-spacing: 10px;
     }
 `
-export const LandingSub = styled.h3`
+export const LandingSub = styled(motion.h3)`
     font-family: "Lexend Tera";
     margin-top: -0.3rem;
     text-align: center;
@@ -186,6 +187,8 @@ export const TicketCircle = styled.div`
     justify-content: center;
     box-shadow: 2px 3px 5px rgba(0,0,0, 50%);
     cursor: pointer;
+    filter: brightness(0.75);
+
     /* responsive */
     @media (max-width: 1245px) {
         width: 9rem;

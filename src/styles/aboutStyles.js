@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 export const Container = styled.div`
     flex-grow: 1;
@@ -23,7 +24,7 @@ export const Container = styled.div`
 
 `
 
-export const AboutTitle = styled.h1`
+export const AboutTitle = styled(motion.h1)`
     text-align: center;
     font-family: "Advent Pro";
     text-transform: uppercase;
@@ -41,7 +42,7 @@ export const AboutTitle = styled.h1`
         font-size: 2.8rem;
     }
 `
-export const AboutBg = styled.div`
+export const AboutBg = styled(motion.div)`
     height: 380px;
     width: 260px;
     position: absolute;
@@ -83,7 +84,7 @@ export const AboutBg = styled.div`
         filter: ${({theme}) => theme.theme === "darkTheme" ? "brightness(0.7)" : "brightness(0.8)"};
     }
 `
-export const AboutContent = styled.div`
+export const AboutContent = styled(motion.div)`
     width: 25rem;
     position: absolute;
     top: 18rem;
@@ -111,7 +112,7 @@ export const AboutContent = styled.div`
         font-family: "Orbitron";
     }
 `
-export const AboutIntro = styled.div`
+export const AboutIntro = styled(motion.div)`
     width: 20rem;
     position: absolute;
     top: 3rem;
@@ -182,7 +183,7 @@ export const AboutIntro = styled.div`
         }
     }
 `
-export const AboutBgAn = styled.div`
+export const AboutBgAn = styled(motion.div)`
     height: 380px;
     width: 240px;
     position: absolute;

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
-export const LandingIntroWrapper = styled.div`
+export const LandingIntroWrapper = styled(motion.div)`
     height: 100vh;
     width: 100%;
     position: relative;
@@ -14,7 +15,7 @@ export const LandingIntroWrapper = styled.div`
         top: 70rem;
     }
 `
-export const LandingIntroContent = styled.div`
+export const LandingIntroContent = styled(motion.div)`
     height: 70vh;
     width: 100%;
     display: flex;
@@ -131,7 +132,7 @@ export const LandingIntroBox = styled.div`
     height: 30vh;
     width: 100%;
 `
-export const LandingIntroBg = styled.div`
+export const LandingIntroBg = styled(motion.div)`
     height: 380px;
     width: 260px;
     position: absolute;

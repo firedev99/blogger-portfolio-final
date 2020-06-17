@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 export const BlogWrapper = styled.div`
     flex-grow: 1;
@@ -131,7 +132,7 @@ export const BlogTitle = styled.div`
         }
     }
 `
-export const ContentBox = styled.div`
+export const ContentBox = styled(motion.div)`
     display: flex;
     flex-direction: row;
     position: absolute;

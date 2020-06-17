@@ -1,9 +1,44 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+//scroll behaviour
+import { useInView } from 'react-intersection-observer'
+import { useAnimation } from 'framer-motion'
+
 import { HomeContactWrapper, HomeLinksWrapper, HomeEmailWrapper } from '../../styles/homeContactsStyles'
 
+const contactsVariants = {
+    hidden: { 
+        opacity: 0,
+        x: -500
+    },
+    visible: {
+        opacity: 1,
+        x: 0, 
+        transition: {
+            delay: 1,
+            duration: 0.8, 
+            ease: [0.1,0.6,0.05,0.91]
+        }
+    }
+}
+
 const HomeContacts = () => {
+    const animation = useAnimation()
+    const [contentRef, inView] = useInView({
+        triggerOnce: true,
+    })
+    
+    useEffect(() => {
+        if(inView) {
+            animation.start("visible")
+        }
+    })
     return (
-        <HomeContactWrapper>
+        <HomeContactWrapper
+            ref={contentRef}
+            animate={animation}
+            initial="hidden"
+            variants={contactsVariants}
+        >
             <h1>CONCTACT</h1>
             <HomeLinksWrapper>
                 <div className="label">SOCIAL</div>

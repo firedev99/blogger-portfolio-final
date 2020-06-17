@@ -1,7 +1,41 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import { BlogWrapper, BlogHeading, BlogTitle, ContentBox, YoutubeIntro } from '../../styles/blogStyles'
 //custom hooks
 import Video from '../Video'
+
+const linksVariants = {
+    initial: {
+        opacity: 0,
+        x: 100,
+    },
+    animate: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            delayChildren: 1, 
+            staggerChildren: 1,
+            duration: 3,
+            ease: [0.1,0.6,0.05,0.91]
+        }
+    },
+}
+
+const links = {
+    initial: {
+        opacity: 0,
+        x: -1000,
+    },
+    animate: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            duration: 0.5,
+            ease: [0.1,0.6,0.05,0.91]
+        }
+    }
+}
+
 
 const BlogPage = () => {
     return (
@@ -15,8 +49,12 @@ const BlogPage = () => {
                 <span>1.73M</span>
                 <span>SUBSCRIBERS</span>
             </BlogTitle>
-            <ContentBox>
-                <div className="item">
+            <ContentBox
+                variants={linksVariants}
+                initial="initial"
+                animate="animate"
+            >
+                <motion.div variants={links} className="item">
                     <div className="item_1">
                         <Video className="youtube_video" videoSrcURL="https://www.youtube.com/embed/rDYdeq3JW_E" videoTitle="Soothing Website Created by the @FireDev" />
                     </div>
@@ -29,8 +67,8 @@ const BlogPage = () => {
                             Noakhali, Bangladesh. A nearly ideal country, big episode.
                         </p>
                     </div>
-                </div>
-                <div className="item">
+                </motion.div>
+                <motion.div variants={links} className="item">
                     <div className="item_1">
                         <Video className="youtube_video" videoSrcURL="https://www.youtube.com/embed/IugcIAAZJ2M" videoTitle="Soothing Website Created by the @FireDev" />
                     </div>
@@ -43,8 +81,8 @@ const BlogPage = () => {
                             Tokyo, Japan. A nearly ideal country, big episode.
                         </p>
                     </div>
-                </div>
-                <div className="item">
+                </motion.div>
+                <motion.div variants={links} className="item">
                     <div className="item_1">
                         <Video className="youtube_video" videoSrcURL="https://www.youtube.com/embed/m5cZJh2njDA" videoTitle="Soothing Website Created by the @FireDev" />
                     </div>
@@ -57,7 +95,7 @@ const BlogPage = () => {
                             Florida, America. A nearly ideal country, big episode.
                         </p>
                     </div>
-                </div>
+                </motion.div>
             </ContentBox>
             <YoutubeIntro>
                 <div className="youtube_intro">

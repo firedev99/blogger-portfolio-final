@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-
-export const TravelDisplayWrapper = styled.div`
+import { motion } from 'framer-motion'
+export const TravelDisplayWrapper = styled(motion.div)`
     flex-grow: 1;
     margin: 0 auto;
     position: relative;

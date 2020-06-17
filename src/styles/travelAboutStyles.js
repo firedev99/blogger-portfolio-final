@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
-export const TravelAboutWrapper = styled.div`
+export const TravelAboutWrapper = styled(motion.div)`
     position: relative;
     top: 56rem;
     @media (max-width: 1265px) {

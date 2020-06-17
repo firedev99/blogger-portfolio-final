@@ -20,6 +20,7 @@ export const MenuCircle = styled.div`
         box-shadow: 1px 3px 6px rgba(0,0,0, 51%);
         cursor: pointer;
         outline: none;
+        filter: brightness(0.75);
         @media (max-width: 1370px) {
             bottom: 6rem;
         }
@@ -132,7 +133,7 @@ export const KeyName = styled.div`
         }
     }
 `
-export const NavLinks = styled.div`
+export const NavLinks = styled(motion.div)`
     position: absolute;
     z-index: 100;
     right: -3.5rem;
@@ -198,7 +199,7 @@ export const NavLinks = styled.div`
             } 
     }
 `
-export const ExitButton = styled.div`
+export const ExitButton = styled(motion.div)`
     position: absolute;
     bottom: 3rem;
     left: 10rem;
@@ -235,7 +236,7 @@ export const ExitButton = styled.div`
         
     }
 `
-export const SocialLinks = styled.div`
+export const SocialLinks = styled(motion.div)`
     position: absolute;
     right: 10rem;
     bottom: 3.5rem;
