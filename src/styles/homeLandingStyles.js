@@ -187,7 +187,7 @@ export const TicketCircle = styled.div`
     justify-content: center;
     box-shadow: 2px 3px 5px rgba(0,0,0, 50%);
     cursor: pointer;
-    filter: brightness(0.75);
+    filter: brightness(0.87);
 
     /* responsive */
     @media (max-width: 1245px) {

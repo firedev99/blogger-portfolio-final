@@ -20,7 +20,7 @@ export const MenuCircle = styled.div`
         box-shadow: 1px 3px 6px rgba(0,0,0, 51%);
         cursor: pointer;
         outline: none;
-        filter: brightness(0.75);
+        filter: brightness(0.87);
         @media (max-width: 1370px) {
             bottom: 6rem;
         }
